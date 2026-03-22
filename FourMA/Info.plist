@@ -9,11 +9,11 @@
     <key>CFBundleExecutable</key>
     <string>$(EXECUTABLE_NAME)</string>
     <key>CFBundleIdentifier</key>
-    <string>com.senderpa.fourma</string>
+    <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
     <key>CFBundleName</key>
-    <string>4MA</string>
+    <string>$(PRODUCT_NAME)</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
@@ -22,12 +22,31 @@
     <string>1</string>
     <key>LSRequiresIPhoneOS</key>
     <true/>
+    <key>UIRequiredDeviceCapabilities</key>
+    <array>
+        <string>armv7</string>
+    </array>
+
+    <!-- Privacy permissions -->
     <key>NSMicrophoneUsageDescription</key>
-    <string>4MA uses the microphone for voice commands — say "Nexus" to talk to your AI.</string>
+    <string>4MA uses the microphone for voice commands -- say "Nexus" to talk to your AI.</string>
     <key>NSCameraUsageDescription</key>
     <string>4MA can use the camera for face tracking to animate the avatar.</string>
     <key>NSSpeechRecognitionUsageDescription</key>
     <string>4MA uses speech recognition to understand your voice commands.</string>
+    <key>NSLocalNetworkUsageDescription</key>
+    <string>4MA connects to your local Ollama server and 4MA backend on your network.</string>
+    <key>NSFaceIDUsageDescription</key>
+    <string>4MA can use Face ID to secure your API keys.</string>
+
+    <!-- Bonjour services for local network discovery -->
+    <key>NSBonjourServices</key>
+    <array>
+        <string>_http._tcp</string>
+        <string>_https._tcp</string>
+    </array>
+
+    <!-- App Transport Security: allow local network and HTTP for dev servers -->
     <key>NSAppTransportSecurity</key>
     <dict>
         <key>NSAllowsLocalNetworking</key>
@@ -35,16 +54,41 @@
         <key>NSAllowsArbitraryLoads</key>
         <true/>
     </dict>
+
+    <!-- Launch screen -->
     <key>UILaunchScreen</key>
     <dict>
         <key>UIColorName</key>
         <string>LaunchBackground</string>
+        <key>UIImageName</key>
+        <string></string>
     </dict>
+
+    <!-- Supported orientations -->
     <key>UISupportedInterfaceOrientations</key>
     <array>
         <string>UIInterfaceOrientationPortrait</string>
         <string>UIInterfaceOrientationLandscapeLeft</string>
         <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+    <key>UISupportedInterfaceOrientations~ipad</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+        <string>UIInterfaceOrientationPortraitUpsideDown</string>
+        <string>UIInterfaceOrientationLandscapeLeft</string>
+        <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+
+    <!-- Status bar -->
+    <key>UIStatusBarStyle</key>
+    <string>UIStatusBarStyleLightContent</string>
+    <key>UIViewControllerBasedStatusBarAppearance</key>
+    <true/>
+
+    <!-- Background audio for TTS -->
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>audio</string>
     </array>
 </dict>
 </plist>

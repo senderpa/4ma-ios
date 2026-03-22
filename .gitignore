@@ -1,5 +1,27 @@
+# Xcode user data
 *.xcuserdata
-*.xcworkspace
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+
+# Build output
 DerivedData/
 build/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# CocoaPods / SPM
+Pods/
+.build/
+
+# macOS
 .DS_Store
+**/.DS_Store
+
+# Secrets -- never commit
+*.xcconfig
+!Shared.xcconfig
+
+# Archives
+*.xcarchive
